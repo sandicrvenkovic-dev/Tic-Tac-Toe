@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A friendly game of tic-tac-toe for two players. Pick your names and take turns.">
+  <title>Tic Tac Together</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="game">
+    <header>
+      <p class="eyebrow">A LITTLE FRIENDLY COMPETITION</p>
+      <h1>Tic Tac <span>Together.</span></h1>
+      <p class="intro">Two players. Nine squares. Your move.</p>
+    </header>
+    <form id="player-form">
+      <div class="players">
+        <label class="player-card" id="x-card"><span class="player-label"><b class="x-mark">X</b> PLAYER ONE</span><input id="player-x" name="player-x" maxlength="24" placeholder="Player one" aria-label="Player one name" autocomplete="off"></label>
+        <span class="versus" aria-hidden="true">vs</span>
+        <label class="player-card" id="o-card"><span class="player-label"><b class="o-mark">O</b> PLAYER TWO</span><input id="player-o" name="player-o" maxlength="24" placeholder="Player two" aria-label="Player two name" autocomplete="off"></label>
+      </div>
+      <div class="status-wrap"><p id="status" role="status" aria-live="polite">Make yourselves at home. Enter your names to begin.</p><span id="turn-note">X always goes first</span></div>
+      <div id="board" class="board" role="group" aria-label="Tic-tac-toe board"></div>
+      <button class="start-button" id="start-button" type="submit">Start game <span aria-hidden="true">↗</span></button>
+    </form>
+    <footer>Take turns placing your mark. Get three in a row to win.</footer>
+  </main>
+</body>
+</html>

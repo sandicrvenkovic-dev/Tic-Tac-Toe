@@ -1,0 +1,223 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap");
+
+:root {
+  color-scheme: light;
+  font-family: "DM Sans", sans-serif;
+  color: #282d29;
+  background: #f6f5ef;
+  --green: #286653;
+  --orange: #d67a51;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at 5% 15%, #e8eddf 0, transparent 43%),
+    radial-gradient(ellipse at 100% 90%, #f1e4d4 0, transparent 40%);
+}
+.game {
+  max-width: 580px;
+  margin: auto;
+  padding: 48px 24px 28px;
+  text-align: center;
+}
+.eyebrow {
+  color: var(--green);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2.6px;
+  margin: 0 0 14px;
+}
+h1 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(32px, 7vw, 46px);
+  letter-spacing: -2.3px;
+  line-height: 1.15;
+  margin: 0;
+}
+h1 span {
+  color: var(--green);
+}
+.intro {
+  color: #777c72;
+  margin: 13px 0 32px;
+  font-size: 14px;
+}
+.players {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.player-card {
+  text-align: left;
+  flex: 1;
+  min-width: 0;
+  padding: 15px 18px;
+  border: 1px solid #dcded3;
+  background: #ffffff8a;
+  border-radius: 14px;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+.player-card.active {
+  border-color: var(--green);
+  box-shadow: 0 0 0 2px #28665313;
+}
+#o-card.active {
+  border-color: var(--orange);
+  box-shadow: 0 0 0 2px #d67a5113;
+}
+.player-label {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #777c72;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+.player-label b {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 22px;
+  line-height: 1;
+}
+.x-mark {
+  color: var(--green);
+}
+.o-mark {
+  color: var(--orange);
+}
+input {
+  display: block;
+  width: 100%;
+  border: 0;
+  background: transparent;
+  font: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  color: #282d29;
+  margin-top: 10px;
+  padding: 3px 0;
+  border-radius: 3px;
+}
+input::placeholder {
+  color: #82867c;
+  font-weight: 400;
+}
+input:disabled {
+  opacity: 1;
+  -webkit-text-fill-color: #282d29;
+}
+.versus {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 14px;
+  color: #999d92;
+}
+.status-wrap {
+  min-height: 91px;
+  padding: 23px 0 16px;
+}
+#status {
+  margin: 0 0 5px;
+  font-size: 15px;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+#turn-note {
+  font-size: 11px;
+  color: #83887b;
+}
+.board {
+  max-width: 360px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.cell {
+  aspect-ratio: 1;
+  border: 1px solid #dfe1d7;
+  border-radius: 15px;
+  background: #fffdf7;
+  box-shadow: 0 3px 0 #e1e3d8;
+  font:
+    500 clamp(40px, 10vw, 60px) "Space Grotesk",
+    sans-serif;
+  color: var(--green);
+  cursor: pointer;
+  transition:
+    background 0.15s,
+    transform 0.15s;
+}
+.cell[data-mark="O"] {
+  color: var(--orange);
+}
+.cell:not(:disabled):hover {
+  background: #eaf0e5;
+  transform: translateY(-2px);
+}
+.cell:disabled {
+  cursor: default;
+  opacity: 1;
+}
+.cell.winner {
+  background: #dcebdd;
+  border-color: #8daf92;
+}
+.cell.winner[data-mark="O"] {
+  background: #f5dfcf;
+  border-color: #d9aa8e;
+}
+:focus-visible {
+  outline: 3px solid #bd783b;
+  outline-offset: 4px;
+}
+.start-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 360px;
+  margin: 25px auto 0;
+  border: 0;
+  border-radius: 10px;
+  padding: 16px 22px;
+  background: var(--green);
+  color: #fffdf4;
+  font:
+    600 14px "DM Sans",
+    sans-serif;
+  cursor: pointer;
+  box-shadow: 0 3px 0 #1e4c3f;
+}
+.start-button:hover {
+  background: #1e5544;
+}
+.start-button span {
+  font-size: 20px;
+  line-height: 1;
+}
+footer {
+  font-size: 11px;
+  color: #8c9185;
+  margin-top: 25px;
+}
+@media (max-width: 400px) {
+  .game {
+    padding: 30px 18px;
+  }
+  .players {
+    gap: 8px;
+  }
+  .player-card {
+    padding: 12px;
+  }
+  .player-label {
+    letter-spacing: 0.6px;
+  }
+}
