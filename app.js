@@ -141,4 +141,4 @@ const DisplayController = (() => {
   return { initialize };
 })();
 
-if (typeof document !== "undefined") DisplayController.initialize();
+if (typeof document !== "undefined") DisplayController.initialize(); // updated tic-tac-toe game to use module pattern and IIFE, added accessibility features, and improved code structure
