@@ -189,3 +189,5 @@ PLAYER clicks the center button
 The Gameboard array stores strings. The DisplayController buttons array stores
 HTML elements. They are separate arrays connected by matching positions.
 The board is stored in memory; reloading the page clears the game.
+
+//added pseudocode
